@@ -7,7 +7,7 @@ variable "k8s_ami" {
 }
 
 variable "instance_type" {
-    default = "t2.micro"
+  default = "t2.micro"
 }
 
 variable "vpc_id" {
@@ -26,6 +26,10 @@ variable "admin_cidr" {
   default     = "0.0.0.0/0"
 }
 
+variable "route_table_id" {
+  default = "rtb-050535eeb91822445"
+}
+
 variable "project" {
   description = "Project name used for tags"
   type        = string
@@ -33,17 +37,17 @@ variable "project" {
 }
 
 variable "owner" {
-    default = "etosamoe"
+  default = "etosamoe"
 }
 
 ### NETWORK
 
 variable "availability_zones" {
-    type        = number
-    default = "1"
+  type    = number
+  default = "1"
 }
 
 variable "aws_region" {
-  type        = string
-  default     = "eu-central-1"
+  type    = string
+  default = "eu-central-1"
 }

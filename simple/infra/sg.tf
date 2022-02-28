@@ -1,5 +1,5 @@
 resource "aws_security_group" "bastion" {
-  vpc_id      = var.vpc_id
+  vpc_id = var.vpc_id
 
   ingress {
     protocol  = "tcp"
@@ -22,10 +22,10 @@ resource "aws_security_group" "bastion" {
 }
 
 resource "aws_security_group" "k8s" {
-  vpc_id      = var.vpc_id
+  vpc_id = var.vpc_id
 
   ingress {
-    protocol  = "tcp"
+    protocol  = "-1"
     from_port = 0
     to_port   = 0
 
