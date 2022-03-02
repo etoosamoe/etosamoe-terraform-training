@@ -1,0 +1,4 @@
+resource "aws_key_pair" "etosamoe" {
+  key_name   = "etosamoe"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxoWvyFC1+akjT6qdTbVVTmUAWlQE2ayT/3C9r3iPN/BcWaQ492VXQNpNOglHblvgVbu6j+gP66BaM6rUrBPyQKAbOQCndRkJsRNfIuY3T++TJ11/5b73hu35SJ8FPu9oh3NaMLoeKTY0EHh//fLzBdMg+AhfQ4rkgiZEcEDSE3Q1U8uw1ed/0RVjVgz1/0oXZYIFrZsLQIPSjoK+pM/q/7YkityCRxzSDlM0W0cJJwLO1thyxjV98Z3Y4w+3FCR/5u2CV+uu3jXUmOS1l7pJqRtLXdFxTlM/XcL3xukBEuFqxlcnhzBFy4DpAXDugzYw1bUrcvnxlK/+XF/0uwIrL+1HfrjLU0ds+ILfl/iCz094EXSktTRiQN66N5F9R+CAE3SdAriceLe1V3q/QL1oxwAP1I2/BUTuY2/gwUkswhXYCKvqFb0pMietvkLbsKrO+lvnv18Xh1EXukgkVMZOo2DxfzJo1TSM0Eqmn8j36WqNnbGrj88wFfPTP4VYw/lc="
+}
