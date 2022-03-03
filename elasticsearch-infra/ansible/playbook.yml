@@ -1,0 +1,38 @@
+---
+- name: Install Elasticsearch cluster
+  hosts: es-nodes
+  become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    master_init_node: 172.31.1.134
+
+  tasks:
+  - name: Add GPG key
+    ansible.builtin.apt_key:
+      url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+      state: present
+  - name: Add repo to sources list
+    ansible.builtin.apt_repository:
+      repo: deb https://artifacts.elastic.co/packages/8.x/apt stable main
+      state: present
+  - name: Update apt cache
+    ansible.builtin.apt:
+      update_cache: yes
+  - name: Install Elasticsearch
+    ansible.builtin.apt:
+      name:
+      - apt-transport-https
+      - elasticsearch
+      state: present
+  - name: Copy JVM settings
+    ansible.builtin.template:
+      src: jvm.options.j2
+      dest: /etc/elasticsearch/jvm.options
+      mode: 0644
+  - name: Copy configuration template
+    ansible.builtin.template:
+      src: elasticsearch.yml.j2
+      dest: /etc/elasticsearch/elasticsearch.yml
+      mode: '0644'
+#    notify: Restart elasticsearch
+

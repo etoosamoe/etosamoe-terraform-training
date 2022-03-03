@@ -1,0 +1,15 @@
+all:
+  children:
+    es-nodes:
+      hosts:
+        es-node01:
+          ansible_host: 127.0.0.1
+        es-node02:
+          ansible_host: 127.0.0.1
+        es-node03:
+          ansible_host: 127.0.0.1
+    bastion:
+      hosts:
+        es-bastion:
+          ansible_host: 127.0.0.1
+          

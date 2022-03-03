@@ -17,6 +17,6 @@ resource "aws_instance" "node" {
   subnet_id              = aws_subnet.private[0].id
   vpc_security_group_ids = [aws_security_group.private.id]
   tags = {
-    Name = "${var.project}-node${count.index}"
+    Name = "${var.project}-node${count.index + 1}"
   }
 }

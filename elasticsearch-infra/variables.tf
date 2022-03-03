@@ -3,9 +3,6 @@ variable "aws_region" {
   default = "eu-central-1"
 }
 
-variable "vpc_id" {
+variable "vpc_id" {}
 
-}
-variable "route_table_id" {
-
-}
+variable "route_table_id" {}
